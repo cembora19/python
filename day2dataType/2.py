@@ -1,0 +1,11 @@
+# num_char=len(input("what is your name?\n"))
+# new_num_char=str(num_char)
+# print("your name has "+ new_num_char+" characters.")
+# a=123
+# print(type(a))
+# b=str(123)
+# print(type(b))
+# c=float(123)
+# print(type(c))
+print(70+float("123.50"))
+print(str(70)+str(100))
