@@ -2,7 +2,7 @@ from statistics import mode
 from turtle import Turtle
 ALIGNMENT = "center"
 FONT = ("Courier", 24, "normal")
-PATH="C:\\Users\\cembora\\Desktop\\kodlama\\python\\day20BuildSnakeGame\\"
+PATH="day20BuildSnakeGame\\"
 
 
 class Scoreboard(Turtle):

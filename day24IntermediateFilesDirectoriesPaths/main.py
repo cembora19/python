@@ -1,7 +1,7 @@
 from operator import mod
 
 
-PATH="C:\\Users\\cembora\\Desktop\\kodlama\\python\\day24IntermediateFilesDirectoriesPaths\\"
+PATH="day24IntermediateFilesDirectoriesPaths\\"
 
 #BİLGİLENDİRME: OPEN FONKSİYONLARINDA MODLAR VAR
 # A MODU APPEND YANİ DOSYAYA EKLEMME YAPIYOR(İLAVE)
