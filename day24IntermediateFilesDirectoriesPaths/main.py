@@ -1,5 +1,3 @@
-from importlib.resources import contents
-
 
 PATH="day24IntermediateFilesDirectoriesPaths/"
 
@@ -25,6 +23,6 @@ PATH="day24IntermediateFilesDirectoriesPaths/"
 #     contents=file.read()
 #     print(contents)
 
-with open(f"{PATH}my_file.txt") as file:
-    contents=file.read()
-    print(contents)    
+# with open(f"{PATH}my_file.txt") as file:
+#     contents=file.read()
+#     print(contents)    
