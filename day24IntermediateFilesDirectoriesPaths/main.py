@@ -1,7 +1,7 @@
-from operator import mod
+from importlib.resources import contents
 
 
-PATH="day24IntermediateFilesDirectoriesPaths\\"
+PATH="day24IntermediateFilesDirectoriesPaths/"
 
 #BİLGİLENDİRME: OPEN FONKSİYONLARINDA MODLAR VAR
 # A MODU APPEND YANİ DOSYAYA EKLEMME YAPIYOR(İLAVE)
@@ -15,8 +15,16 @@ PATH="day24IntermediateFilesDirectoriesPaths\\"
 # with open(f"{PATH}my_file.txt", mode="w") as file:
 #     file.write("deneme1")
 
-with open(f"{PATH}my_file.txt", mode="a") as file:
-    file.write("\nappend yaptik bakalim")
+# with open(f"{PATH}my_file.txt", mode="a") as file:
+#     file.write("\nappend yaptik bakalim")
 
-with open(f"{PATH}new_file.txt", mode="w") as file:
-    file.write("new file opened.")
+# with open(f"{PATH}new_file.txt", mode="w") as file:
+#     file.write("new file opened.")
+
+# with open("../../Desktop/my_file.txt") as file:
+#     contents=file.read()
+#     print(contents)
+
+with open(f"{PATH}my_file.txt") as file:
+    contents=file.read()
+    print(contents)    
