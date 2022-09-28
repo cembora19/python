@@ -7,6 +7,13 @@ PATH="day26ListComprehension\\tr_alphabet.csv"
 
 data=pandas.read_csv(PATH)
 tr_data_frame={row.letter:row.code for (index, row) in data.iterrows()}
-word=input("Enter a word: ").upper()
-list=[tr_data_frame[letter] for letter in word]
-print(list)
+def generate_phonetic():
+    word=input("Enter a word: ").upper()
+    try:
+        list=[tr_data_frame[letter] for letter in word]
+    except KeyError:
+        print("Sorry, only letters in the alphabet please.")
+        generate_phonetic()
+    else:
+        print(list)
+generate_phonetic()
