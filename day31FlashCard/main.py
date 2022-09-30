@@ -7,11 +7,20 @@ CARD_BACK="day31FlashCard\\images\\card_back.png"
 CARD_FRONT="day31FlashCard\\images\\card_front.png"
 RIGHT_BUTTON="day31FlashCard\\images\\right.png"
 WRONG_BUTTON="day31FlashCard\\images\\wrong.png"
-CSV_PATH="day31FlashCard\data\\turkish_words.csv"
+CSV_PATH="day31FlashCard\\data\\turkish_words.csv"
 
-data=pandas.read_csv(CSV_PATH)
-to_learn=data.to_dict(orient="records")
 current_card={}
+to_learn={}
+
+try:   
+   data=pandas.read_csv(CSV_PATH)
+except FileNotFoundError:
+   original_data=pandas.read_csv(CSV_PATH)
+   print(original_data)
+   to_learn=original_data.to_dict(orient="recors")
+else:
+   to_learn=data.to_dict(orient="recors")
+
 
 def new_random_word():
    global current_card,flip_timer
@@ -26,7 +35,14 @@ def flip_card():
    canvas.itemconfig(card_title,text="Turkish",fill="white")
    canvas.itemconfig(card_word,text=current_card["Turkish"],fill="white")
    canvas.itemconfig(card_background,image=back_card_photo)
-   
+
+def is_know():
+   to_learn.remove(current_card)
+   print(len(to_learn))
+   data=pandas.DataFrame(to_learn)
+   data.to_csv("day31FlashCard\\data\\words_to_learn.csv",index=False)
+   new_random_word()
+
 
 window=Tk()
 window.title("Flashy")
@@ -49,7 +65,7 @@ button1=Button(image=wrong_button,highlightthickness=0,command=new_random_word)
 button1.grid(row=2,column=0)
 
 right_button=PhotoImage(file=RIGHT_BUTTON)
-button2=Button(image=right_button,highlightthickness=0,command=new_random_word)
+button2=Button(image=right_button,highlightthickness=0,command=is_know)
 button2.grid(column=1,row=2)
 
 new_random_word()
