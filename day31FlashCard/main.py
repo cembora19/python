@@ -1,4 +1,3 @@
-from cgitb import text
 import pandas
 from tkinter import *
 from random import *
@@ -24,7 +23,7 @@ else:
 
 def new_random_word():
    global current_card,flip_timer
-   # window.after_cancel(flip_timer)
+   window.after_cancel(flip_timer)
    current_card=choice(to_learn)
    canvas.itemconfig(card_title,text="English",fill="black")
    canvas.itemconfig(card_word,text=current_card["English"],fill="black")

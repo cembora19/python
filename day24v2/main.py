@@ -16,5 +16,5 @@ with open(f"{LETTER_PATH}") as letter_file:
         stripped_name=name.strip()
         new_letter=letter_contents.replace(PLACEHOLDER, stripped_name)
         with open(f"{SEND_PATH}letter_for_{stripped_name}.txt", mode="w") as completed_letter:
-            completed_letter.write(new_letter)
+            completed_letter.write(new_letter)  
         
